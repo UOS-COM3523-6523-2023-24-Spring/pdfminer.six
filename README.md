@@ -36,31 +36,34 @@ Features
 * Tagged contents extraction.
 * Automatic layout analysis.
 
-How to use
-----------
+## Getting started
 
-* Install Python 3.8 or newer.
-* Install pdfminer.six.
-  ```bash
-  pip install pdfminer.six
+1. Clone the repository
 
-* (Optionally) install extra dependencies for extracting images.
+    ```sh
+    git clone https://github.com/pdfminer/pdfminer.six
+    cd pdfminer.six
+    ```
 
-  ```bash
-  pip install 'pdfminer.six[image]'
+2. Install dev dependencies
 
-* Use the command-line interface to extract text from pdf.
+    ```sh
+    pip install -e ".[dev]"
+    ```
 
-  ```bash
-  pdf2txt.py example.pdf
+3. Run all formatting, linting and tests
 
-* Or use it with Python. 
-  ```python
-  from pdfminer.high_level import extract_text
+    On all Python versions:
 
-  text = extract_text("example.pdf")
-  print(text)
-  ```
+    ```sh
+    nox
+   ```
+   
+   Or only the tests on a single Python version:
+   
+   ```sh
+    nox -e tests-3.12
+    ```
 
 Contributing
 ------------
